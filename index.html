@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>植感美學創作計畫 — 花開製作所</title>
+<meta name="description" content="植物繪圖 x 商品設計教學。每週花一點點時間，畫一片葉子、畫一朵花、畫一個屬於自己的療癒時光。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand: #4E6824;
+  --brand-light: #e8f0dc;
+  --warm-bg: #faf8f4;
+  --card-bg: #fff;
+  --text-main: #2c2c2a;
+  --text-sub: #6b6b65;
+  --text-light: #9a9a92;
+  --border: #e8e6e0;
+  --highlight-bg: #fef9e7;
+  --highlight-border: #f0c040;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background: var(--warm-bg);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+.page { max-width: 480px; margin: 0 auto; padding: 0; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 2rem 1.5rem 1.25rem;
+  background: linear-gradient(180deg, var(--brand-light) 0%, var(--warm-bg) 100%);
+}
+.hero-img { width: 85%; max-width: 360px; margin: 0 auto 14px; }
+.hero p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+
+/* Sections */
+.section { padding: 0 1.5rem; margin-bottom: 1.5rem; }
+.section-title {
+  font-size: 17px; font-weight: 700; color: var(--brand);
+  margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.section-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); flex-shrink: 0; }
+.divider { height: 0.5px; background: var(--border); margin: 0 1.5rem 1.5rem; }
+
+/* Pain points */
+.pain-list { list-style: none; }
+.pain-list li {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 8px 0; font-size: 14px; border-bottom: 0.5px solid var(--border);
+}
+.pain-list li:last-child { border: none; }
+.pain-pct { font-size: 17px; font-weight: 700; color: var(--brand); min-width: 42px; }
+.pain-quote { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+/* Why cards */
+.why-card {
+  background: var(--card-bg); border: 0.5px solid var(--border);
+  border-radius: 12px; padding: 0.85rem 1.1rem; margin-bottom: 8px;
+}
+.why-card h3 { font-size: 14px; font-weight: 700; color: var(--brand); margin-bottom: 3px; }
+.why-card p { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+
+/* About Carol */
+.carol-intro { background: var(--brand-light); border-radius: 12px; padding: 1.1rem; margin: 0 1.5rem 1.5rem; }
+.carol-photo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: 0 auto 10px; display: block; border: 3px solid #fff; }
+.carol-intro p { font-size: 13.5px; color: var(--text-main); line-height: 1.7; }
+.carol-intro .highlight { color: var(--brand); font-weight: 500; }
+.carol-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.carol-tags span { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 16px; padding: 3px 10px; font-size: 11px; color: var(--text-sub); }
+
+/* Fit list */
+.fit-list { list-style: none; }
+.fit-list li { display: flex; gap: 10px; padding: 6px 0; font-size: 13.5px; line-height: 1.5; }
+.fit-check { color: var(--brand); font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+/* Plan includes - list style */
+.plan-list { list-style: none; }
+.plan-list li {
+  display: flex; gap: 12px; padding: 10px 0;
+  border-bottom: 0.5px solid var(--border); align-items: flex-start;
+}
+.plan-list li:last-child { border: none; }
+.plan-num {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--brand);
+  color: #fff; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.plan-list h4 { font-size: 14px; font-weight: 500; color: var(--text-main); margin-bottom: 1px; }
+.plan-list p { font-size: 12.5px; color: var(--text-sub); line-height: 1.5; }
+
+/* Product images */
+.product-gallery { margin: 0 1.5rem 1.5rem; }
+.product-gallery img { border-radius: 12px; margin-bottom: 8px; }
+.product-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.product-row img { flex: 1; min-width: 0; border-radius: 12px; object-fit: cover; aspect-ratio: 1 / 1; margin-bottom: 0; }
+
+/* Vision box */
+.vision-box { background: var(--brand-light); border-radius: 12px; margin: 0 1.5rem 1.5rem; padding: 1.1rem; }
+.vision-box p { font-size: 13.5px; color: var(--text-main); line-height: 1.7; }
+.vision-box .highlight { color: var(--brand); font-weight: 500; }
+
+/* Curriculum */
+.curriculum { width: 100%; border-collapse: collapse; font-size: 13px; }
+.curriculum th { text-align: left; font-size: 11px; color: var(--text-light); font-weight: 500; padding: 5px 0; border-bottom: 1.5px solid var(--brand); }
+.curriculum td { padding: 6px 0; border-bottom: 0.5px solid var(--border); vertical-align: top; }
+.curriculum .month { color: var(--brand); font-weight: 700; width: 40px; }
+.curriculum .topic { font-weight: 500; }
+.curriculum .product { color: var(--text-sub); font-size: 12px; text-align: right; }
+
+/* Testimonials with images */
+.testimonial-img { border-radius: 12px; border: 0.5px solid var(--border); margin-bottom: 8px; }
+
+/* Pricing */
+.price-value-table { width: 100%; font-size: 13px; margin-bottom: 14px; }
+.price-value-table td { padding: 5px 0; border-bottom: 0.5px solid var(--border); }
+.price-value-table .item-price { text-align: right; color: var(--text-sub); font-weight: 500; }
+.price-total {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--brand-light); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px;
+}
+.price-total span:first-child { font-size: 13px; }
+.price-total .old { font-size: 15px; font-weight: 700; color: var(--brand); text-decoration: line-through; text-decoration-color: #c0392b; }
+.price-now {
+  background: var(--highlight-bg); border: 1.5px solid var(--highlight-border);
+  border-radius: 12px; padding: 1.1rem; text-align: center; margin-bottom: 10px;
+}
+.price-now .label { font-size: 12px; color: var(--text-sub); margin-bottom: 4px; }
+.price-now .amount { font-size: 28px; font-weight: 700; color: var(--brand); }
+.price-now .amount small { font-size: 14px; font-weight: 400; color: var(--text-sub); }
+.price-now .tw-amount { font-size: 13px; color: var(--text-sub); margin-top: 4px; }
+.price-note { font-size: 11.5px; color: var(--text-light); text-align: center; line-height: 1.6; margin-top: 8px; }
+
+/* Tier comparison - use image */
+.tier-section { margin: 0 1.5rem 1.5rem; background: var(--brand-light); border-radius: 16px; padding: 1.25rem; }
+.tier-img { border-radius: 12px; border: 0.5px solid var(--border); }
+
+/* Q&A */
+.qa-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 0.5px solid var(--border); }
+.qa-item:last-child { border: none; }
+.qa-item .q { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+.qa-item .a { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+
+/* Soft CTA */
+.soft-cta { background: var(--brand-light); border-radius: 12px; margin: 0 1.5rem 1.5rem; padding: 1.1rem; }
+.soft-cta p { font-size: 13.5px; color: var(--text-main); line-height: 1.7; }
+.soft-cta .highlight { color: var(--brand); font-weight: 500; }
+.cta-btn {
+  display: inline-block; background: var(--brand); color: #fff;
+  font-size: 14px; font-weight: 500; padding: 10px 24px; border-radius: 24px;
+  text-decoration: none; margin-top: 10px; transition: opacity 0.2s;
+}
+.cta-btn:hover { opacity: 0.85; }
+
+/* Join section - bigger */
+.join-box {
+  background: var(--brand); color: #fff; border-radius: 16px;
+  margin: 0 1.5rem 1.5rem; padding: 1.75rem 1.5rem;
+}
+.join-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+.join-steps { list-style: none; }
+.join-steps li {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 12px; font-size: 14px; line-height: 1.6; opacity: 0.95;
+}
+.join-steps li:last-child { margin-bottom: 0; }
+.step-num {
+  width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.2);
+  font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.join-screenshot { border-radius: 10px; margin-top: 16px; border: 1px solid rgba(255,255,255,0.15); }
+
+/* Footer */
+.closing { padding: 0 1.5rem; margin-bottom: 1.25rem; }
+.closing p { font-size: 13.5px; color: var(--text-sub); line-height: 1.7; text-align: center; }
+.brand-mark { text-align: center; padding-bottom: 2.5rem; font-size: 12px; color: var(--text-light); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img class="hero-img" src="images/%E8%A8%88%E7%95%AB%E5%90%8D%E7%A8%B1.png" alt="植感美學創作計畫 — 植物繪圖 x 商品設計教學">
+    <p>
+      每週花一點點時間，<br>
+      畫一片葉子、畫一朵花、<br>
+      畫一個屬於自己的療癒時光。
+    </p>
+  </div>
+
+  <!-- 痛點 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      你是不是也被這些困擾著？
+    </div>
+    <ul class="pain-list">
+      <li>
+        <span class="pain-pct">40%</span>
+        <div>
+          覺得自己沒天份、畫不出來
+          <div class="pain-quote">「感覺細節很多，沒天份根本畫不出來」</div>
+        </div>
+      </li>
+      <li>
+        <span class="pain-pct">37%</span>
+        <div>
+          時間被工作與家庭壓縮
+          <div class="pain-quote">「工作跟小孩讓畫畫時間一直被壓縮」</div>
+        </div>
+      </li>
+      <li>
+        <span class="pain-pct">20%</span>
+        <div>
+          買了課程卻半途而廢
+          <div class="pain-quote">「買過課程，最後都生灰塵」</div>
+        </div>
+      </li>
+      <li>
+        <span class="pain-pct">13%</span>
+        <div>
+          水彩暈染一直覺得是大魔王
+          <div class="pain-quote">「水彩一直覺得是大魔王」</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 這些限制，其實都不是限制 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      這些限制，其實都不是限制
+    </div>
+    <div class="why-card">
+      <h3>電繪沒有失敗成本</h3>
+      <p>畫錯了、畫不好，隨時上一步重來。不怕浪費紙、浪費顏料、破壞心情。</p>
+    </div>
+    <div class="why-card">
+      <h3>隨時隨地都能畫</h3>
+      <p>任何零碎時間與空間，打開 iPad 就可以開畫，零準備。</p>
+    </div>
+    <div class="why-card">
+      <h3>讓綠色能量療癒忙碌的你</h3>
+      <p>反覆繪製葉脈或花朵的過程，可以讓人感受到安心。很適合日子過得忙碌的人，拿來靜心與放空。</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 關於 Carol -->
+  <div class="carol-intro">
+    <img class="carol-photo" src="images/%E6%88%91%E6%9C%AC%E4%BA%BA%E7%9A%84%E5%9C%96.png" alt="凱洛">
+    <p>
+      我是<span class="highlight">凱洛</span>，花開製作所的創辦人。<br>
+      2022 年接觸電繪後開啟了全新的創作旅程，<br>
+      擅長用 Procreate 描繪<span class="highlight">細緻的水彩風格植物繪圖</span>。
+    </p>
+    <p style="margin-top: 6px;">
+      從線上課程到實體工作坊，<br>
+      已經帶領超過 200 位學員學習電繪。
+    </p>
+    <div class="carol-tags">
+      <span>台灣植物學藝術協會 TABA</span>
+      <span>2025 世界植物藝術展參展</span>
+      <span>台北植物園電繪工作坊講師</span>
+      <span>Procreate 線上課程 200+ 學員</span>
+    </div>
+  </div>
+
+  <!-- 這個計畫適合誰 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      這個計畫適合誰？
+    </div>
+    <ul class="fit-list">
+      <li><span class="fit-check">✓</span>喜歡植物與療癒風格，想把植物元素融入生活的人</li>
+      <li><span class="fit-check">✓</span>想持續畫畫但時間零碎，無法享受電繪樂趣的人</li>
+      <li><span class="fit-check">✓</span>希望學會凱洛風格細緻植物電繪水彩的人</li>
+      <li><span class="fit-check">✓</span>熱愛植物風格生活小物的人</li>
+      <li><span class="fit-check">✓</span>喜歡手作，想要學習周邊設計的人</li>
+    </ul>
+    <p style="font-size: 13px; color: var(--text-sub); margin-top: 8px; line-height: 1.6;">
+      畫畫不再是科班生的專利，你也可以靠畫畫找到自信與成就感。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 計畫包含什麼 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      計畫包含什麼？
+    </div>
+    <ul class="plan-list">
+      <li>
+        <span class="plan-num">1</span>
+        <div>
+          <h4>每週六線上畫畫</h4>
+          <p>晚上 20:00，1 小時直播教學，附完整回放影片</p>
+        </div>
+      </li>
+      <li>
+        <span class="plan-num">2</span>
+        <div>
+          <h4>每月完成一件（以上）作品</h4>
+          <p>跟著當月主題畫，穩定累積你的作品集</p>
+        </div>
+      </li>
+      <li>
+        <span class="plan-num">3</span>
+        <div>
+          <h4>優先或免費參與特別活動、課程</h4>
+          <p>限定活動與工作坊，VIP 學員優先報名</p>
+        </div>
+      </li>
+      <li>
+        <span class="plan-num">4</span>
+        <div>
+          <h4>商品設計教學</h4>
+          <p>學習送件印刷必備軟體操作、印刷廠商開發與送件流程</p>
+        </div>
+      </li>
+      <li>
+        <span class="plan-num">5</span>
+        <div>
+          <h4>製圖軟體迷你課</h4>
+          <p>Illustrator、Photoshop 實務操作教學</p>
+        </div>
+      </li>
+      <li>
+        <span class="plan-num">6</span>
+        <div>
+          <h4>專屬 LINE 社群</h4>
+          <p>隨時疑難排解，不怕卡關沒人問</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 商品圖展示 -->
+  <div class="product-gallery">
+    <div class="product-row">
+      <img src="images/%E5%95%86%E5%93%81%E5%9C%96.png" alt="植物繪圖抱枕作品">
+      <img src="images/%E5%95%86%E5%93%81%E5%9C%963.png" alt="薰衣草系列商品：手帕、馬克杯、水壺">
+    </div>
+    <img src="images/%E5%95%86%E5%93%81%E5%9C%962.png" alt="學員商品作品集錦">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 想像未來的你 -->
+  <div class="vision-box">
+    <p>
+      <span class="highlight">想像一下未來的你——</span><br><br>
+      每週固定的這一個小時，是完全屬於你自己的時間。<br>
+      不用擔心技術不夠好，我們從最簡單的線稿開始，一步一步描繪出一朵真實的植物。<br><br>
+      明年的這個時候，你手上有一疊自己設計的明信片，<br>
+      是你一筆一筆畫出來的虞美人、蕨類、繡球花。<br>
+      你的朋友問你：這是哪裡買的？<br>
+      你說：<span class="highlight">我自己畫的。</span>
+    </p>
+  </div>
+
+  <!-- 12 個月學習計劃 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      12 個月學習計劃
+    </div>
+    <table class="curriculum">
+      <thead>
+        <tr><th>月份</th><th>主題</th><th style="text-align:right;">商品示範</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="month">4 月</td><td class="topic">虞美人</td><td class="product">—</td></tr>
+        <tr><td class="month">5 月</td><td class="topic">香豌花</td><td class="product">明信片</td></tr>
+        <tr><td class="month">6 月</td><td class="topic">蕨類</td><td class="product">杯墊</td></tr>
+        <tr><td class="month">7 月</td><td class="topic">乒乓菊</td><td class="product">壓克力吊飾</td></tr>
+        <tr><td class="month">8 月</td><td class="topic">鳶尾花</td><td class="product">資料夾</td></tr>
+        <tr><td class="month">9 月</td><td class="topic">秋海棠</td><td class="product">—</td></tr>
+        <tr><td class="month">10 月</td><td class="topic">尤加利</td><td class="product">—</td></tr>
+        <tr><td class="month">11 月</td><td class="topic">風信子</td><td class="product">科學海報</td></tr>
+        <tr><td class="month">12 月</td><td class="topic">繡球花</td><td class="product">紙膠帶</td></tr>
+        <tr><td class="month">1 月</td><td class="topic">聖誕玫瑰</td><td class="product">圖鑑掛布</td></tr>
+        <tr><td class="month">2 月</td><td class="topic">金合歡</td><td class="product">抱枕</td></tr>
+        <tr><td class="month">3 月</td><td class="topic">蘭花</td><td class="product">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 學員見證 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      加入後，學員們這樣說
+    </div>
+    <img class="testimonial-img" src="images/%E5%AE%A2%E6%88%B6%E8%A6%8B%E8%AD%89%E4%B8%80.png" alt="學員見證 — Ann Chen">
+    <img class="testimonial-img" src="images/%E5%AE%A2%E6%88%B6%E8%A6%8B%E8%AD%892.png" alt="學員見證 — 王姿姿">
+    <img class="testimonial-img" src="images/%E5%AE%A2%E6%88%B6%E8%A6%8B%E8%AD%893.png" alt="學員見證 — Ann Chen">
+    <img class="testimonial-img" src="images/%E5%AE%A2%E6%88%B6%E8%A6%8B%E8%AD%894.png" alt="學員見證 — Anny Chueh">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 價格 -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      計畫價值與價格
+    </div>
+    <table class="price-value-table">
+      <tr><td>一年 52 週直播教學 + 回放影片</td><td class="item-price">14,400 元</td></tr>
+      <tr><td>學員作業批改與講評 x 12 次</td><td class="item-price">9,600 元</td></tr>
+      <tr><td>限定主題課（暈染技法 + 構圖賞析…）x 4 次</td><td class="item-price">4,000 元</td></tr>
+      <tr><td>免費或優先參加活動 x 4 次</td><td class="item-price">6,000 元</td></tr>
+      <tr><td>製圖軟體迷你課（Ai、Ps）</td><td class="item-price">6,000 元</td></tr>
+      <tr><td>業界實戰技能（廠商名單 + 送件技巧）</td><td class="item-price">3,000 元</td></tr>
+      <tr><td>創作挑戰賽 + 學員成果展</td><td class="item-price">4,800 元</td></tr>
+      <tr><td>專屬 LINE 社群，隨時疑難排解</td><td class="item-price">6,000 元</td></tr>
+    </table>
+    <div class="price-total">
+      <span>計畫總價值</span>
+      <span class="old">NT$ 53,800</span>
+    </div>
+    <div class="price-now">
+      <div class="label">現在加入</div>
+      <div class="amount">$530 美金 <small>/ 年</small></div>
+      <div class="tw-amount">約 NT$ 16,880</div>
+    </div>
+    <div class="price-note">
+      金額隨著內容豐富度持續漲價，越早加入越划算。<br>
+      實際金額以 Skool 介面為主。
+    </div>
+  </div>
+
+  <!-- 如何加入（移到 $530 後面） -->
+  <div class="join-box">
+    <h3>如何加入植感美學創作計畫</h3>
+    <ul class="join-steps">
+      <li><span class="step-num">1</span>進入 Skool 社群，點選上方的 Classroom</li>
+      <li><span class="step-num">2</span>找到「植感美學創作計畫」課程，點選 Unlock with VIP</li>
+      <li><span class="step-num">3</span>選擇 JOIN VIP 方案，即可解鎖所有內容</li>
+    </ul>
+    <img class="join-screenshot" src="images/%E8%AA%B2%E7%A8%8B%E8%B3%BC%E8%B2%B7%E7%A4%BA%E6%84%8F%E5%9C%96.png" alt="Skool Classroom 購買示意圖">
+    <img class="join-screenshot" src="images/%E8%A8%82%E9%96%B1%E6%96%B9%E6%A1%88%E5%83%B9%E6%A0%BC.png" alt="Standard / Premium / VIP 三種方案比較" style="margin-top: 8px;">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Q&A -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot"></div>
+      常見問題
+    </div>
+    <div class="qa-item">
+      <div class="q">Q：我完全沒有電繪基礎，真的可以嗎？</div>
+      <div class="a">A：電繪新手也歡迎加入，有任何問題直播與 LINE 群都可以發問，Classroom 裡面也有免費的電繪功能影片可以學習。</div>
+    </div>
+    <div class="qa-item">
+      <div class="q">Q：每週真的只要一小時？</div>
+      <div class="a">A：我明白大家都很忙碌，很難抽出完整時間畫畫。我希望大家每個禮拜至少撥出一個小時在課堂上享受畫畫、享受屬於自己的時光。</div>
+    </div>
+    <div class="qa-item">
+      <div class="q">Q：我時間搭配不上怎麼辦？</div>
+      <div class="a">A：我們目前固定每週六晚上畫畫，如果臨時有事也沒有關係，直播完當天晚上就會上傳回放影片，可以找你有空的時間練習。</div>
+    </div>
+    <div class="qa-item">
+      <div class="q">Q：我三分鐘熱度怎麼辦？我怕我撐不久。</div>
+      <div class="a">A：你不需要靠意志力撐一年，每週 1 小時、每個月完成一個作品，旁邊還有一群夥伴。真的撐不住？退費機制在這裡：加入滿三個月後可申請退費，用了幾個月扣幾個月的月訂閱價，剩下退給你。</div>
+    </div>
+    <div class="qa-item">
+      <div class="q">Q：我只是想畫畫，還想到做商品，我需要年訂閱嗎？</div>
+      <div class="a">A：我們真正在做的事，是帶你把植物帶進生活，讓每一天過得更有質感、更療癒。畫畫是其中一個方式、做商品是另一個方式。最終的目的是希望讓你的生活，有更多讓你覺得美的東西，而且那些東西是你自己創造的。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 還不確定？ -->
+  <div class="soft-cta">
+    <p>
+      如果你現在還不確定，完全沒有關係。<br><br>
+      你也可以考慮先解鎖 <span class="highlight">Premium</span>，<br>
+      每月 10 美金參與<span class="highlight">植感練習週記</span>，<br>
+      每個月會有主題跟練、直播教學與調色練習。<br><br>
+      先來感受我的教學節奏、感受社群的溫度，<br>
+      確定這是你想要的，<br>
+      再決定要不要進入進階方案。
+    </p>
+    <div style="text-align: center;">
+      <a class="cta-btn" href="https://sayuri70.github.io/weekly-sketch/">了解植感練習週記 →</a>
+    </div>
+  </div>
+
+  <!-- 最後的話 -->
+  <div class="closing">
+    <p>
+      這不只是一堂就結束的畫畫課，<br>
+      而是一段把植物創作帶進生活的旅程。<br><br>
+      每週花一點點時間，<br>
+      慢慢地，你的畫作不只會停留在畫布上，<br>
+      還可以被設計成各種生活小物——<br>
+      明信片、貼紙、門簾、手帳小物⋯<br>
+      讓你的創作，一點一滴地出現在生活裡。
+    </p>
+  </div>
+
+  <div class="brand-mark">
+    Verdia 花開植感美學實驗室
+  </div>
+
+</div>
+</body>
+</html>
